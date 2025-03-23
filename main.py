@@ -9,7 +9,6 @@ from langchain_core.output_parsers import StrOutputParser
 import base64
 
 
-# 画像の説明を取得
 def get_image_description(image_data: str):
     prompt = ChatPromptTemplate.from_messages(
         [
@@ -47,12 +46,10 @@ def create_message(dic: dict):
     return [("human", dic["input"])]
 
 
-# ドキュメントを整形
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
 
-# チェーンを作成
 def create_chain():
     vectorstore = Chroma(
         embedding_function=OpenAIEmbeddings(model="text-embedding-3-small"),
@@ -80,7 +77,6 @@ def create_chain():
     )
 
 
-# セッション状態を初期化
 if "history" not in st.session_state:
     st.session_state.history = []
     st.session_state.chain = create_chain()

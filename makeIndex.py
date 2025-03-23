@@ -32,5 +32,4 @@ else:
     filename = "gomi_sorting_garbage.csv"
     print(f"ファイル名が指定されていないため、デフォルトの '{filename}' を使用します。")
 
-# ドキュメントをロード
 load_document(filename)
