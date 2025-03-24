@@ -16,6 +16,7 @@ def load_document(filename):
         splits = python_splitter.split_documents(pages)
         print(f"ドキュメントを {len(splits)} チャンクに分割しました。")
 
+
         # Chroma に保存
         Chroma.from_documents(
             documents=splits,
