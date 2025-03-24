@@ -7,34 +7,28 @@ sys.path.append("../")
 from multimodal_chat.utils.image_processing import get_image_description, encode_image
 from multimodal_chat.utils.message_handling import display_message
 from multimodal_chat.utils.rag_chain import create_chain
-from multimodal_chat.components.styles import apply_styles, display_app_info, display_footer
+from multimodal_chat.components.styles import apply_styles
 
 def main():
-    """
-    マルチモーダルRAGチャットアプリケーションのメイン関数
-    """
-    # スタイルを適用
+    # スタイル適用
     apply_styles()
     
-    # セッション状態の初期化
+    # 初期化
     if "history" not in st.session_state:
-        st.session_state.history = []  # チャット履歴を初期化
-        st.session_state.chain = create_chain()  # チェーンを作成
-        st.session_state.last_input = ""  # 最後の入力を初期化
+        st.session_state.history = []
+        st.session_state.chain = create_chain()
+        st.session_state.last_input = ""
 
-    # マルチモーダルRAGチャットのヘッダー
-    st.markdown('<div class="main-header">🤖 マルチモーダルRAGチャットボット</div>', unsafe_allow_html=True)
+    # ヘッダー
+    st.markdown('<div class="main-header">朝霞市ゴミ分別ガイド</div>', unsafe_allow_html=True)
 
     # 2カラムレイアウトを作成
     main_col, side_col = st.columns([3, 1])
 
     # サイドカラムの内容
     with side_col:
-        st.markdown('<div class="subheader">⚙️ 設定</div>', unsafe_allow_html=True)
         
         # 画像アップロードセクション
-        st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
-        st.markdown('<div class="upload-section">', unsafe_allow_html=True)
         uploaded_file = st.file_uploader("📷 画像をアップロード", type=["jpg", "jpeg", "png", "gif"])
         
         if uploaded_file is not None:
@@ -43,9 +37,6 @@ def main():
             st.success("✅ 画像がアップロードされました")
         st.markdown('</div>', unsafe_allow_html=True)
         
-        # アプリ情報
-        st.markdown('<div class="info-box">', unsafe_allow_html=True)
-        display_app_info()
         st.markdown('</div>', unsafe_allow_html=True)
         
         # 会話履歴リセットボタン
@@ -134,9 +125,5 @@ def main():
             
             # ページをリロードして入力フィールドをクリア
             st.rerun()
-
-    # フッターを表示
-    display_footer()
-
 if __name__ == "__main__":
     main() 

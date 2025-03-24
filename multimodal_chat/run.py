@@ -24,12 +24,10 @@ def main():
         print("環境変数または.envファイルで設定してください。")
         sys.exit(1)
     
-    # アプリケーションのパスを取得
     script_dir = os.path.dirname(os.path.abspath(__file__))
     app_path = os.path.join(script_dir, "app.py")
     
-    # Streamlitアプリを起動
-    print("マルチモーダルRAGチャットアプリケーションを起動しています...")
+    print("起動中...")
     subprocess.run(["streamlit", "run", app_path])
 
 if __name__ == "__main__":
