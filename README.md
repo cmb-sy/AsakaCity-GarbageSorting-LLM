@@ -1,53 +1,67 @@
-# Overview
+# Multimodal Chat - Asaka City Garbage Disposal Assistant
+
+## Overview
 
 This project is an LLM-powered assistant that helps users understand garbage disposal classifications in Asaka City.
 
-# Getting Started
+## Getting Started
 
 Follow the steps below to set up and run the project.
 
-1. Create a Virtual Environment
-
-```bash
-python3 -m venv venv
-```
-
-2. Activate the Virtual Environment
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/multimodal-chat.git
 cd multimodal-chat
 ```
 
-3. Install Dependencies
-   Install the required libraries using:
+### 2. Create a Virtual Environment
+
+```bash
+python3 -m venv venv
+```
+
+### 3. Activate the Virtual Environment
+
+#### Linux/macOS
+
+```bash
+source venv/bin/activate
+```
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Set Up the OpenAPI Key
+### 5. Set Up the OpenAI API Key
 
 ```bash
 export OPENAI_API_KEY=your_api_key_here
 ```
 
-Other ways to do this include:
+**Alternative Methods:**
 
-1. Use python-dotenv to manage environment variables.
-2. Store the key as a secret in GitHub Actions.
+- Use python-dotenv to manage environment variables
+- Store the key as a secret in GitHub Actions
 
-3. Create the Index
-   Run the following script to generate the index:
-
-```bash
-streamlit run multimodal_chat/app.py
-```
-
-6. Start the Chatbot
+### 6. Create the Index
 
 ```bash
-python asakaGomiSortChat.py
+python create_index.py
 ```
 
-# Demo
+### 7. Start the Chatbot
+
+```bash
+python run.py
+```
+
+## demo
