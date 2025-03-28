@@ -11,8 +11,7 @@ Follow the steps below to set up and run the project.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/multimodal-chat.git
-cd multimodal-chat
+git clone https://github.com/cmb-sy/AsakaCity-GarbageSorting-LLM.git
 ```
 
 ### 2. Create a Virtual Environment
