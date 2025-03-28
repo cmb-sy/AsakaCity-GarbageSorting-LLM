@@ -9,14 +9,14 @@ def apply_styles():
                 <style>
     .main-header {
         font-size: 2.5rem;
-        color: #333333;  // dark grey
+        color: white;
         text-align: center;
         margin-bottom: 1rem;
         font-weight: 600;
     }
     .subheader {
         font-size: 1.5rem;
-        color: #555555;  // medium grey
+        color: white;
         margin-bottom: 1rem;
         font-weight: 500;
     }
@@ -35,6 +35,9 @@ def apply_styles():
         border-left: 4px solid #B0B0B0;
         display: flex;
         align-items: center;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: black;
     }
     .bot-message {
         background-color: #F8F8F8;
@@ -44,6 +47,9 @@ def apply_styles():
         border-left: 4px solid #B0B0B0;
         display: flex;
         align-items: center;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: black;
     }
     .message-avatar {
         font-size: 1.5rem;
